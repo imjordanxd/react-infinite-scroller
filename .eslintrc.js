@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ['prettier', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
+  extends: [
+    'prettier',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+  ],
   plugins: ['react', 'prettier'],
   env: {
     browser: true,
@@ -15,7 +19,7 @@ module.exports = {
     },
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': ['error'],
     'no-unused-vars': [
       'off',
       {

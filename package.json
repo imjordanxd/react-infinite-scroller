@@ -12,14 +12,12 @@
     "build": "mkdirp dist && tsc",
     "prepublish": "npm run build",
     "test": "jest test",
-    "lint": "eslint",
-    "precommit": "lint-staged"
+    "lint": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\" --fix --max-warnings 0",
+    "precommit": "lint-staged",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "src/*.{js,jsx}": [
-      "eslint --fix --max-warnings 0"
-    ],
-    "test/*.{js,jsx}": [
+    "{src,test}/*.{js,jsx,ts,tsx}": [
       "eslint --fix --max-warnings 0"
     ]
   },
