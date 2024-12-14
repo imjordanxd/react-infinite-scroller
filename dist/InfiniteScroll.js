@@ -82,7 +82,7 @@ class InfiniteScroll extends React.Component {
         const testOptions = {
             get passive() {
                 passive = true;
-            }
+            },
         };
         try {
             document.addEventListener('test', null, testOptions);
@@ -98,12 +98,12 @@ class InfiniteScroll extends React.Component {
         if (this.isPassiveSupported()) {
             options = {
                 useCapture: this.props.useCapture,
-                passive: true
+                passive: true,
             };
         }
         else {
             options = {
-                passive: false
+                passive: false,
             };
         }
         return options;
@@ -185,7 +185,8 @@ class InfiniteScroll extends React.Component {
         }
         // Here we make sure the element is visible as well as checking the offset
         if (offset < Number(this.props.threshold) &&
-            (el && el.offsetParent !== null)) {
+            el &&
+            el.offsetParent !== null) {
             this.detachScrollListener();
             this.beforeScrollHeight = parentNode.scrollHeight;
             this.beforeScrollTop = parentNode.scrollTop;
@@ -212,7 +213,7 @@ class InfiniteScroll extends React.Component {
     render() {
         const renderProps = this.filterProps(this.props);
         const { children, element: Element, hasMore, initialLoad, isReverse, loader, loadMore, pageStart, ref, threshold, useCapture, useWindow, getScrollParent } = renderProps, props = __rest(renderProps, ["children", "element", "hasMore", "initialLoad", "isReverse", "loader", "loadMore", "pageStart", "ref", "threshold", "useCapture", "useWindow", "getScrollParent"]);
-        props.ref = node => {
+        props.ref = (node) => {
             this.scrollComponent = node;
             if (ref) {
                 ref(node);
@@ -245,7 +246,7 @@ InfiniteScroll.propTypes = {
     getScrollParent: prop_types_1.default.func,
     threshold: prop_types_1.default.number,
     useCapture: prop_types_1.default.bool,
-    useWindow: prop_types_1.default.bool
+    useWindow: prop_types_1.default.bool,
 };
 InfiniteScroll.defaultProps = {
     element: 'div',
@@ -258,6 +259,6 @@ InfiniteScroll.defaultProps = {
     isReverse: false,
     useCapture: false,
     loader: null,
-    getScrollParent: null
+    getScrollParent: null,
 };
 exports.default = InfiniteScroll;
