@@ -1,22 +1,16 @@
-const fs = require('fs');
-
-const prettierOptions = JSON.parse(fs.readFileSync('./.prettierrc', 'utf8'));
-
 module.exports = {
-  extends: ['last', 'prettier', 'prettier/react', 'plugin:react/recommended'],
+  extends: ['prettier', 'plugin:react/recommended'],
   plugins: ['react', 'prettier'],
   env: {
     browser: true,
+    jest: true,
   },
-  globals: {
-    describe: true,
-    it: true,
-    module: true,
-    exports: true,
-    require: true
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module'
   },
   rules: {
-    'prettier/prettier': ['error', prettierOptions],
+    'prettier/prettier': 'error',
     'no-unused-vars': [
       'off',
       {
