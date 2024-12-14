@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['prettier', 'plugin:react/recommended'],
+  extends: ['prettier', 'plugin:react/recommended', 'plugin:react/jsx-runtime'],
   plugins: ['react', 'prettier'],
   env: {
     browser: true,
@@ -7,7 +7,12 @@ module.exports = {
   },
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   rules: {
     'prettier/prettier': 'error',
@@ -16,8 +21,8 @@ module.exports = {
       {
         vars: 'all',
         args: 'after-used',
-        ignoreRestSiblings: false
-      }
-    ]
-  }
+        ignoreRestSiblings: false,
+      },
+    ],
+  },
 };

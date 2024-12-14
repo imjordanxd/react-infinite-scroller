@@ -12,7 +12,7 @@
     "build": "mkdirp dist && tsc",
     "prepublish": "npm run build",
     "test": "jest test",
-    "lint": "eslint ./src ./test",
+    "lint": "eslint",
     "precommit": "lint-staged"
   },
   "lint-staged": {
