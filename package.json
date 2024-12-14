@@ -52,7 +52,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^25.0.1",
     "lint-staged": "^15.2.11",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^3.0.1",
     "prettier": "^3.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
