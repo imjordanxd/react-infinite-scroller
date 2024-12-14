@@ -17,12 +17,10 @@
   },
   "lint-staged": {
     "src/*.{js,jsx}": [
-      "eslint --fix --max-warnings 0",
-      "git add"
+      "eslint --fix --max-warnings 0"
     ],
     "test/*.{js,jsx}": [
-      "eslint --fix --max-warnings 0",
-      "git add"
+      "eslint --fix --max-warnings 0"
     ]
   },
   "keywords": [
