@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import PropTypes from 'prop-types';
 
-export default class InfiniteScroll extends Component {
+export default class InfiniteScroll extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     element: PropTypes.node,
@@ -249,7 +249,7 @@ export default class InfiniteScroll extends Component {
     const renderProps = this.filterProps(this.props);
     const {
       children,
-      element,
+      element: Element,
       hasMore,
       initialLoad,
       isReverse,
@@ -281,6 +281,6 @@ export default class InfiniteScroll extends Component {
           : childrenArray.push(this.defaultLoader);
       }
     }
-    return React.createElement(element, props, childrenArray);
+    return <Element {...props}>{childrenArray}</Element>;
   }
 }
