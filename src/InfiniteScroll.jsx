@@ -275,11 +275,17 @@ export default class InfiniteScroll extends React.Component {
     const childrenArray = [children];
     if (hasMore) {
       if (loader) {
-        isReverse ? childrenArray.unshift(loader) : childrenArray.push(loader);
+        if (isReverse) {
+          childrenArray.unshift(loader);
+        } else {
+          childrenArray.push(loader);
+        }
       } else if (this.defaultLoader) {
-        isReverse
-          ? childrenArray.unshift(this.defaultLoader)
-          : childrenArray.push(this.defaultLoader);
+        if (isReverse) {
+          childrenArray.unshift(this.defaultLoader);
+        } else {
+          childrenArray.push(this.defaultLoader);
+        }
       }
     }
     return <Element {...props}>{childrenArray}</Element>;

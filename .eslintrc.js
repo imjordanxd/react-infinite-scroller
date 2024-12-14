@@ -3,8 +3,11 @@ module.exports = {
     'prettier',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:@typescript-eslint/recommended',
   ],
-  plugins: ['react', 'prettier'],
+  parser: '@typescript-eslint/parser',
+  plugins: ['react', 'prettier', '@typescript-eslint'],
+  root: true,
   env: {
     browser: true,
     jest: true,
@@ -20,7 +23,7 @@ module.exports = {
   },
   rules: {
     'prettier/prettier': ['error'],
-    'no-unused-vars': [
+    '@typescript-eslint/no-unused-vars': [
       'off',
       {
         vars: 'all',
